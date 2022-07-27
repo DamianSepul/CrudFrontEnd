@@ -1,0 +1,34 @@
+<!-- Apartado visual donde mediante una tabla se ven los datos almacenados en la base de datos -->
+<table class="table">
+  <thead>
+    <!-- Titulo de las columnas -->
+    <td>Title</td>
+    <td>Description</td>
+    <td>Released Date</td>
+    <td>Autor</td>
+    <td>Price</td>
+    <td></td>
+    <td></td>
+  </thead>
+  <tbody>
+    <!-- Iteracion donde se obtienen los datos de la base de datos y se muestran en la tabla -->
+    <tr *ngFor="let book of listBooks">
+      <td>{{ book.title }}</td>
+      <td>{{ book.description }}</td>
+      <td>{{ book.releasedDate }}</td>
+      <td>{{ book.autor }}</td>
+      <td>{{ book.price }}</td>
+      <td>
+        <!-- Llamada al metodo para actualizar un libro -->
+        <i (click)="updateBook(book)" class="far fa-edit"></i>
+      </td>
+      <td>
+        <!-- Llamada al metodo para eliminar un libro -->
+        <i
+          (click)="deleteBook(book.id)"
+          class="far fa-trash-alt text-danger"
+        ></i>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,57 @@
+<!-- Apartado visual del componente Add-book, aqui se encuentran el formulario para almacenar libro y editarlo -->
+
+<!-- Input de titulo del libro -->
+<form [formGroup]="form" (ngSubmit)="AddBook()">
+  <div class="form-group">
+    <label>Book Title</label>
+    <div class="input-group">
+      <input type="text" formControlName="title" class="form-control" />
+    </div>
+  </div>
+  <br />
+  <!-- Input de la descripcion del libro -->
+  <div class="form-group">
+    <label>Book Description</label>
+    <div class="input-group">
+      <textarea
+        class="form-control"
+        formControlName="description"
+        rows="3"
+      ></textarea>
+    </div>
+  </div>
+  <br />
+  <!-- Input de la fecha de lanzamiento del libro-->
+  <div class="form-group">
+    <label> Released Date</label>
+    <div class="input-group">
+      <input type="date" formControlName="releaseddate" class="form-control" />
+    </div>
+  </div>
+  <br />
+  <!-- Input del nombre del autor  -->
+  <div class="form-group">
+    <label>Autor Name</label>
+    <div class="input-group">
+      <input type="text" formControlName="autor" class="form-control" />
+    </div>
+  </div>
+  <br />
+  <!-- Input del precio del libro -->
+  <div class="form-group">
+    <label>Book Price</label>
+    <div class="input-group">
+      <input type="number" formControlName="price" class="form-control" />
+    </div>
+  </div>
+  <br />
+  <div class="form-group">
+    <button
+      class="btn btn-success btn-lg btn-block"
+      [disabled]="form.invalid"
+      type="submit"
+    >
+      <i class="fas fa-database"></i> Add Book!
+    </button>
+  </div>
+</form>
